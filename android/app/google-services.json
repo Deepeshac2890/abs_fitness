@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "236461705664",
+    "project_id": "abs-fitness-2619a",
+    "storage_bucket": "abs-fitness-2619a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236461705664:android:16b7c46928502cd5946025",
+        "android_client_info": {
+          "package_name": "com.example.abs_fitness"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236461705664-p9snakfprcl5gufmaein59cc8qm2b7hh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCrHTgB750hQeq2hvRapulrkW8_E_LE4-M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236461705664-p9snakfprcl5gufmaein59cc8qm2b7hh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
