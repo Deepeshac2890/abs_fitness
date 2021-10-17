@@ -1,13 +1,35 @@
-import 'dart:async';
-
+import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class RegistrationBloc {
+import 'event.dart';
+import 'state.dart';
+
+class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
+  RegistrationBloc() : super(RegistrationState().init());
   Firestore fs = Firestore.instance;
   final fa = FirebaseAuth.instance;
 
-  Future<bool> register(
+  @override
+  Stream<RegistrationState> mapEventToState(RegistrationEvent event) async* {
+    String error;
+    if (event is InitEvent) {
+      yield await init();
+    } else if (event is RegisterUser) {
+      yield LoadingState();
+      bool success = await _register(
+          event.emailID, event.password, event.name, event.phoneNumber);
+      if (!success) error = "Registration Failed !!!";
+
+      yield RegistrationSuccess(error, success);
+    }
+  }
+
+  Future<RegistrationState> init() async {
+    return state.clone();
+  }
+
+  Future<bool> _register(
       String emailId, String password, String fName, String phoneNumber) async {
     if (emailId.contains('@') && password.length > 6) {
       try {

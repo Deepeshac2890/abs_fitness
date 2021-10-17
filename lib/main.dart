@@ -1,4 +1,5 @@
 import 'package:abs_fitness/Screens/WelcomeScreen.dart';
+import 'package:abs_fitness/dashboard/bloc.dart';
 import 'package:abs_fitness/dashboard/view.dart';
 import 'package:abs_fitness/login/bloc.dart';
 import 'package:abs_fitness/login/view.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (BuildContext context) => LoginBloc()),
         BlocProvider(create: (BuildContext context) => RegistrationBloc()),
+        BlocProvider(create: (BuildContext context) => DashboardBloc()),
       ],
       child: MaterialApp(
         initialRoute: WelcomeScreen.id,
