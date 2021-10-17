@@ -1,12 +1,11 @@
 import 'package:abs_fitness/Components/ReusablePaddingWidget.dart';
-import 'package:abs_fitness/Screens/DashboardScreen.dart';
-import 'package:abs_fitness/Screens/RegistrationScreen.dart';
+import 'package:abs_fitness/dashboard/view.dart';
+import 'package:abs_fitness/login/view.dart';
+import 'package:abs_fitness/registration/view.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'LoginScreen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   static String id = "WelcomeScreen";
@@ -58,7 +57,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               tag: 'Login',
               child: Paddy(
                       op: () {
-                        Navigator.pushNamed(context, LoginScreen.id);
+                        Navigator.pushNamed(context, LoginPage.id);
                       },
                       textVal: 'Log In',
                       bColor: Colors.lightBlue)
@@ -68,7 +67,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               tag: 'Register',
               child: Paddy(
                       op: () {
-                        Navigator.pushNamed(context, RegistrationScreen.id);
+                        Navigator.pushNamed(context, RegistrationPage.id);
                       },
                       textVal: 'Register',
                       bColor: Colors.blue)
@@ -76,7 +75,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             ),
             Paddy(
                     op: () {
-                      Navigator.pushNamed(context, DashboardScreen.id);
+                      Navigator.pushNamed(context, DashboardPage.id);
                     },
                     textVal: 'Continue as Guest',
                     bColor: Colors.redAccent)
