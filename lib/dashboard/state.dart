@@ -17,3 +17,9 @@ class DashboardLoaded extends DashboardState {
 
   DashboardLoaded(this.loadedUIElements);
 }
+
+class AdminDashboardLoaded extends DashboardState {
+  final List<Widget> loadedUIElements;
+
+  AdminDashboardLoaded(this.loadedUIElements);
+}

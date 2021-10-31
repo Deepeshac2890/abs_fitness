@@ -10,19 +10,24 @@ import '../Constants.dart';
 import 'bloc.dart';
 import 'event.dart';
 
-class LoginPage extends StatelessWidget {
-  String emailId;
-  String passwd;
-  var forgotEmailController = TextEditingController();
+class LoginPage extends StatefulWidget {
   static final id = "LoginPage";
-  LoginBloc loginBloc;
+
+  @override
+  _LoginPageState createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  String emailId;
+  String password;
+  var forgotEmailController = TextEditingController();
+  final LoginBloc loginBloc = LoginBloc();
 
   @override
   Widget build(BuildContext context) {
-    loginBloc = BlocProvider.of<LoginBloc>(context);
     return BlocConsumer<LoginBloc, LoginState>(
+      cubit: loginBloc,
       listener: (BuildContext context, state) {
-        print(state.toString());
         if (state is LoginSuccess) {
           if (state.success) {
             Navigator.pushNamed(context, DashboardPage.id);
@@ -69,15 +74,7 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget loadingWidget() {
-    return Center(
-      child: CircularProgressIndicator(),
-    );
-  }
-
   Widget loginInit(BuildContext context) {
-    // bool isSpinning = false;
-
     return Scaffold(
       backgroundColor: Colors.white,
       body: Builder(
@@ -129,7 +126,7 @@ class LoginPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                     obscureText: true,
                     onChanged: (value) {
-                      passwd = value;
+                      password = value;
                     },
                     decoration: kTextFieldDecoration,
                   ),
@@ -142,7 +139,8 @@ class LoginPage extends StatelessWidget {
                   child: Paddy(
                           op: () async {
                             // Login Here
-                            loginBloc.add(LoginUsingMailEvent(emailId, passwd));
+                            loginBloc
+                                .add(LoginUsingMailEvent(emailId, password));
                           },
                           textVal: 'Login',
                           bColor: Colors.blue)

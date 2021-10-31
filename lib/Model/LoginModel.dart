@@ -5,10 +5,3 @@ class LoginModel {
 
   LoginModel({this.emailID, this.password, this.type});
 }
-
-class LoginEventModel {
-  final String eventType;
-  final LoginModel lm;
-
-  LoginEventModel({this.eventType, this.lm});
-}

@@ -1,5 +1,4 @@
 import 'package:abs_fitness/Components/ReusablePaddingWidget.dart';
-import 'package:abs_fitness/dashboard/view.dart';
 import 'package:abs_fitness/login/view.dart';
 import 'package:abs_fitness/registration/view.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -21,9 +20,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
       DeviceOrientation.portraitDown,
     ]);
 
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Padding(
+    return Material(
+      color: Colors.white,
+      child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -73,13 +72,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       bColor: Colors.blue)
                   .getPadding(),
             ),
-            Paddy(
-                    op: () {
-                      Navigator.pushNamed(context, DashboardPage.id);
-                    },
-                    textVal: 'Continue as Guest',
-                    bColor: Colors.redAccent)
-                .getPadding(),
           ],
         ),
       ),

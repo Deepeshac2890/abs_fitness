@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../Constants.dart';
 import 'event.dart';
 import 'state.dart';
 
@@ -45,8 +46,9 @@ class RegistrationBloc extends Bloc<RegistrationEvent, RegistrationState> {
               .setData({
             'Name': fName,
             'Email': emailId,
-            'Profile Image': '',
+            'Profile Image': profileImageAsset,
             'Phone Number': phoneNumber,
+            'About': '',
           });
           await fs
               .collection('UIDS')

@@ -17,12 +17,12 @@ class RegistrationPage extends StatelessWidget {
   String fName;
   // String gender; Implement the gender Radio Buttons Later
   String phoneNumber;
-  RegistrationBloc rb;
+  final RegistrationBloc rb = RegistrationBloc();
 
   @override
   Widget build(BuildContext context) {
-    rb = BlocProvider.of<RegistrationBloc>(context);
     return BlocConsumer<RegistrationBloc, RegistrationState>(
+      cubit: rb,
       listener: (BuildContext context, state) {
         if (state is RegistrationSuccess) {
           if (state.success) {
@@ -56,19 +56,11 @@ class RegistrationPage extends StatelessWidget {
         if (state is InitEvent) {
           return initUI(context);
         } else if (state is LoadingState) {
-          return loadingUI();
+          return loadingWidget();
         } else {
           return initUI(context);
         }
       },
-    );
-  }
-
-  Widget loadingUI() {
-    return Container(
-      child: Center(
-        child: CircularProgressIndicator(),
-      ),
     );
   }
 
