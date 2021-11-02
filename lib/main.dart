@@ -6,6 +6,9 @@ import 'package:abs_fitness/admin_details_page/view.dart';
 import 'package:abs_fitness/dashboard/view.dart';
 import 'package:abs_fitness/details_page/view.dart';
 import 'package:abs_fitness/login/view.dart';
+import 'package:abs_fitness/meetingFramework/MeetingClassDashboardAdmin.dart';
+import 'package:abs_fitness/meetingFramework/MeetingClassDashboardUser.dart';
+import 'package:abs_fitness/meeting_dashboard_admin/view.dart';
 import 'package:abs_fitness/profile/view.dart';
 import 'package:abs_fitness/registration/view.dart';
 import 'package:abs_fitness/secrets.dart';
@@ -14,6 +17,12 @@ import 'package:flutter/services.dart';
 import 'package:googleapis/calendar/v3.dart' as cal;
 import 'package:googleapis_auth/auth_io.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+//TODO: Deal with the app always asking meet permission from User
+// TODO: Close all the streams
+// TODO: See Local BLOC Implementation and note it in Notes
+// TODO: In notes update the placement of Expanded widgets where to be done
+// TODO: Refactor the contants
 
 Future<void> main() async {
   if (Platform.isAndroid) {
@@ -59,6 +68,10 @@ class MyApp extends StatelessWidget {
               planName: null,
             ),
         ProfilePage.id: (context) => ProfilePage(),
+        MeetingClassDashboardUser.id: (context) => MeetingClassDashboardUser(),
+        MeetingClassDashboardAdmin.id: (context) =>
+            MeetingClassDashboardAdmin(),
+        MeetingDashboardAdminPage.id: (context) => MeetingDashboardAdminPage(),
       },
     );
   }

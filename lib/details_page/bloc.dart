@@ -1,5 +1,5 @@
 import 'package:abs_fitness/Components/ReusablePaddingWidget.dart';
-import 'package:abs_fitness/dashboard/constant.dart';
+import 'package:abs_fitness/planConstant.dart';
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -37,7 +37,7 @@ class DetailsPageBloc extends Bloc<DetailsPageEvent, DetailsPageState> {
     String imgName = "assets/default.png";
     // Default Phone Number
     String phoneNumber = "7887020286";
-    dashboardUI.forEach(
+    planContants.forEach(
       (element) {
         if (element["title"] == planName) {
           details = element["Details"];

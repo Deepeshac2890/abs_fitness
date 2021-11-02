@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class EventInfo {
@@ -39,6 +40,24 @@ class EventInfo {
         startTimeInEpoch = snapshot['start'],
         endTimeInEpoch = snapshot['end'],
         recurrenceEndDate = snapshot['recurrence'];
+
+  static Future<EventInfo> fromDocumentSnapshot(
+      DocumentSnapshot snapshot) async {
+    EventInfo event = EventInfo(
+        id: await snapshot.data['id'] ?? '',
+        name: await snapshot.data['name'] ?? '',
+        description: await snapshot.data['desc'],
+        className: await snapshot.data['class'],
+        link: await snapshot.data['link'],
+        attendeeEmails: await snapshot.data['emails'] ?? '',
+        shouldNotifyAttendees: await snapshot.data['should_notify'],
+        hasConferencingSupport: await snapshot.data['has_conferencing'],
+        startTimeInEpoch: await snapshot.data['start'],
+        endTimeInEpoch: await snapshot.data['end'],
+        recurrenceEndDate: await snapshot.data['recurrence']);
+
+    return event;
+  }
 
   toJson() {
     return {

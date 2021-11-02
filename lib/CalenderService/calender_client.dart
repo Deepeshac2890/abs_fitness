@@ -24,7 +24,11 @@ class CalendarClient {
     event.description = description;
     event.attendees = attendeeEmailList;
     event.location = location;
-    event.recurrence = ["RRULE:FREQ=DAILY;UNTIL=" + recurrence + "T170000Z"];
+    event.recurrence = [
+      "RRULE:FREQ=DAILY;UNTIL=" +
+          recurrence.substring(0, 10).replaceAll(RegExp(r'-'), '') +
+          "T170000Z"
+    ];
 
     if (hasConferenceSupport) {
       ConferenceData conferenceData = ConferenceData();

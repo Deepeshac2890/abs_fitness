@@ -1,14 +1,18 @@
 import 'package:abs_fitness/Model/EventInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-Firestore fs = Firestore.instance;
 final CollectionReference mainCollection =
     Firestore.instance.collection('Classes');
 
 final DocumentReference documentReference = mainCollection.document('Classes');
 
 class Storage {
+  String uid;
+  Firestore fs = Firestore.instance;
+  FirebaseAuth fa = FirebaseAuth.instance;
+
   Future<void> storeEventData(EventInfo eventInfo) async {
     DocumentReference documentReferencer = documentReference
         .collection('Classes')
@@ -91,16 +95,5 @@ class Storage {
     await documentReferencer.delete().catchError((e) => print(e));
 
     print('Event deleted, id: $id');
-  }
-
-  Stream<QuerySnapshot> retrieveEvents(String planName) {
-    Stream<QuerySnapshot> myClasses = documentReference
-        .collection('Classes')
-        .document('Events')
-        .collection(planName)
-        .orderBy('start')
-        .snapshots();
-
-    return myClasses;
   }
 }

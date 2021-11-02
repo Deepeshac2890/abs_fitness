@@ -1,7 +1,7 @@
 import 'package:abs_fitness/AdminUIDS.dart';
-import 'package:abs_fitness/class_timetables/view.dart';
 import 'package:abs_fitness/dashboard/view.dart';
-import 'package:abs_fitness/meetingFramework/MeetingDashboardAdmin.dart';
+import 'package:abs_fitness/meetingFramework/MeetingClassDashboardUser.dart';
+import 'package:abs_fitness/meeting_dashboard_admin/view.dart';
 import 'package:abs_fitness/profile/view.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -35,7 +35,7 @@ class BottomBar extends StatelessWidget {
               color1: Colors.blue,
               iconText: 'Dashboard',
               tapFunc: () {
-                Navigator.pushNamed(context, DashboardPage.id);
+                Navigator.pushNamed(ctx, DashboardPage.id);
               },
             ),
             BottomBarIcons(
@@ -48,12 +48,10 @@ class BottomBar extends StatelessWidget {
                   ctx,
                   MaterialPageRoute(
                     builder: (context) {
-                      print('UID --> ' + uid);
                       if (isAdmin(uid)) {
-                        print('Going to Meetings Dashboard');
-                        return MeetingDashboard();
+                        return MeetingDashboardAdminPage();
                       } else
-                        return ClassTimetablesPage();
+                        return MeetingClassDashboardUser();
                     },
                   ),
                 );
@@ -66,7 +64,7 @@ class BottomBar extends StatelessWidget {
               iconText: 'My Profile',
               tapFunc: () {
                 Navigator.push(
-                  context,
+                  ctx,
                   MaterialPageRoute(
                     builder: (context) {
                       return ProfilePage();

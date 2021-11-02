@@ -57,4 +57,17 @@ Widget loadingWidget() {
   );
 }
 
+AppBar appBarWithLogOut(BuildContext context) {
+  return AppBar(
+    actions: [
+      IconButton(
+        icon: Icon(Icons.logout),
+        onPressed: () {
+          logout(context);
+        },
+      ),
+    ],
+  );
+}
+
 const String profileImageAsset = "assets/profile.png";

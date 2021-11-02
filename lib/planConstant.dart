@@ -1,4 +1,4 @@
-const dashboardUI = [
+const planContants = [
   {
     "title": "Weight Loss",
     "image": "wl.jpg",

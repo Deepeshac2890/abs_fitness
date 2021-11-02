@@ -6,7 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'constant.dart';
+import '../planConstant.dart';
 import 'event.dart';
 import 'state.dart';
 
@@ -36,7 +36,7 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
   }
 
   List<Widget> getData(BuildContext context) {
-    List<dynamic> responseList = dashboardUI;
+    List<dynamic> responseList = planContants;
     List<Widget> listItems = [];
     responseList.forEach(
       (post) {
@@ -100,7 +100,7 @@ class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
   }
 
   List<Widget> getAdminData(BuildContext context) {
-    List<dynamic> responseList = dashboardUI;
+    List<dynamic> responseList = planContants;
     List<Widget> listItems = [];
     responseList.forEach((post) {
       listItems.add(

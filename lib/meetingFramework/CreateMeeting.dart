@@ -88,7 +88,7 @@ class _CreateMeetingState extends State<CreateMeeting> {
           color: Colors.grey, //change your color here
         ),
         title: Text(
-          'Create Event',
+          'Create Class',
           style: TextStyle(
             color: CustomColor.dark_blue,
             fontSize: 22,
@@ -976,20 +976,22 @@ class _CreateMeetingState extends State<CreateMeeting> {
                                     if (_validateTitle(currentTitle) == null) {
                                       await calendarClient
                                           .insert(
-                                              title: currentTitle,
-                                              description: currentDesc ?? '',
-                                              location: className,
-                                              attendeeEmailList: attendeeEmails,
-                                              shouldNotifyAttendees:
-                                                  shouldNofityAttendees,
-                                              hasConferenceSupport:
-                                                  hasConferenceSupport,
-                                              startTime: DateTime
-                                                  .fromMillisecondsSinceEpoch(
-                                                      startTimeInEpoch),
-                                              endTime: DateTime
-                                                  .fromMillisecondsSinceEpoch(
-                                                      endTimeInEpoch))
+                                        title: currentTitle,
+                                        description: currentDesc ?? '',
+                                        location: className,
+                                        attendeeEmailList: attendeeEmails,
+                                        shouldNotifyAttendees:
+                                            shouldNofityAttendees,
+                                        hasConferenceSupport:
+                                            hasConferenceSupport,
+                                        startTime:
+                                            DateTime.fromMillisecondsSinceEpoch(
+                                                startTimeInEpoch),
+                                        endTime:
+                                            DateTime.fromMillisecondsSinceEpoch(
+                                                endTimeInEpoch),
+                                        recurrence: selectedEndDate.toString(),
+                                      )
                                           .then((eventData) async {
                                         String eventId = eventData['id'];
                                         String eventLink = eventData['link'];
