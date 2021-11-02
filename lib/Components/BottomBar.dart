@@ -1,14 +1,26 @@
+import 'package:abs_fitness/AdminUIDS.dart';
 import 'package:abs_fitness/class_timetables/view.dart';
 import 'package:abs_fitness/dashboard/view.dart';
+import 'package:abs_fitness/meetingFramework/MeetingDashboardAdmin.dart';
 import 'package:abs_fitness/profile/view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BottomBar extends StatelessWidget {
-  final ctx;
-  BottomBar({this.ctx});
+  final context;
+  FirebaseAuth fa = FirebaseAuth.instance;
+  BottomBar({this.context});
+  String uid;
+
+  void getCurrentUID() async {
+    var currUser = await fa.currentUser();
+    uid = currUser.uid;
+  }
+
   @override
   Widget build(BuildContext ctx) {
+    getCurrentUID();
     return BottomAppBar(
       shape: const CircularNotchedRectangle(),
       color: Colors.white,
@@ -23,20 +35,25 @@ class BottomBar extends StatelessWidget {
               color1: Colors.blue,
               iconText: 'Dashboard',
               tapFunc: () {
-                Navigator.pushNamed(ctx, DashboardPage.id);
+                Navigator.pushNamed(context, DashboardPage.id);
               },
             ),
             BottomBarIcons(
               icon: Icons.list,
               color1: Colors.blue,
               color2: Colors.redAccent,
-              iconText: 'Chat Dashboard',
+              iconText: 'Meetings',
               tapFunc: () {
                 Navigator.push(
                   ctx,
                   MaterialPageRoute(
                     builder: (context) {
-                      return ClassTimetablesPage();
+                      print('UID --> ' + uid);
+                      if (isAdmin(uid)) {
+                        print('Going to Meetings Dashboard');
+                        return MeetingDashboard();
+                      } else
+                        return ClassTimetablesPage();
                     },
                   ),
                 );
@@ -49,7 +66,7 @@ class BottomBar extends StatelessWidget {
               iconText: 'My Profile',
               tapFunc: () {
                 Navigator.push(
-                  ctx,
+                  context,
                   MaterialPageRoute(
                     builder: (context) {
                       return ProfilePage();
