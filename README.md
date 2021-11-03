@@ -1,16 +1,11 @@
 # abs_fitness
 
-A Fitness Application developed for Absolute Fitness 
+An App which is being developed for Absolute Fitness Gym Pune in which the user can join the virtual gym and join scheduled classes. It would allow the admin to enroll a new member to the gym. This app has been developed in Flutter. The link for virtual classes which are scheduled will be shared with trainer and attendees.
 
-## Getting Started
+2 Types of User Currently Avaialable : Admin and Normal User.
+Google Meet recurring meetings support is available.
 
-This project is a starting point for a Flutter application.
+Features To Come : 
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+1. Trial Classes can be scheduled.
+2. Seperate Dashboard for Trainers.
