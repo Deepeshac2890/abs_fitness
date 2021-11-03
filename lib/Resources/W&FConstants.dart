@@ -3,10 +3,10 @@ Created By: Deepesh Acharya
 Maintained By: Deepesh Acharya
 */
 
+import 'package:abs_fitness/Stateless_Screens/WelcomeScreen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../Screens/WelcomeScreen.dart';
 
 const kSendButtonTextStyle = TextStyle(
   color: Colors.lightBlueAccent,

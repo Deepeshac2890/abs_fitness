@@ -1,5 +1,5 @@
 import 'package:abs_fitness/Components/ReusablePaddingWidget.dart';
-import 'package:abs_fitness/Screens/WelcomeScreen.dart';
+import 'package:abs_fitness/Stateless_Screens/WelcomeScreen.dart';
 import 'package:abs_fitness/registration/bloc.dart';
 import 'package:abs_fitness/registration/state.dart';
 import 'package:flutter/material.dart';
