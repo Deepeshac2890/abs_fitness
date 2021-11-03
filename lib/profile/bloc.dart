@@ -1,7 +1,8 @@
 import 'dart:io';
 
 import 'package:abs_fitness/Model/ProfileModel.dart';
-import 'package:abs_fitness/Resources/Constants.dart';
+import 'package:abs_fitness/Resources/W&FConstants.dart';
+import 'package:abs_fitness/Resources/StringConstants.dart';
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -42,9 +43,6 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
     } else if (event is SaveEditedDataEvent) {
       _saveData(event.context, event.pm);
       yield SaveEditState(event.pm);
-    } else if (event is LogoutEvent) {
-      await logout(event.context);
-      yield LogoutState();
     }
   }
 

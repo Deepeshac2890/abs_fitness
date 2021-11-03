@@ -10,9 +10,3 @@ class LoadPageEvent extends DetailsPageEvent {
 
   LoadPageEvent(this.planName, this.context);
 }
-
-class LogoutDetailsPageEvent extends DetailsPageEvent {
-  final BuildContext context;
-
-  LogoutDetailsPageEvent(this.context);
-}

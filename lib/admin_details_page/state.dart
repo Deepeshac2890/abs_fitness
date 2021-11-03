@@ -17,5 +17,3 @@ class UILoaded extends AdminDetailsPageState {
 
   UILoaded(this.loadedUIWidgets);
 }
-
-class LeaveState extends AdminDetailsPageState {}

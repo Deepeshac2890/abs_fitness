@@ -17,5 +17,3 @@ class CloseRequestEvent extends AdminDetailsPageEvent {
 
   CloseRequestEvent(this.index, this.planName);
 }
-
-class LeavePageEvent extends AdminDetailsPageEvent {}

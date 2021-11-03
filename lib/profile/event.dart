@@ -24,9 +24,3 @@ class SaveEditedDataEvent extends ProfileEvent {
 
   SaveEditedDataEvent(this.pm, this.context);
 }
-
-class LogoutEvent extends ProfileEvent {
-  final BuildContext context;
-
-  LogoutEvent(this.context);
-}

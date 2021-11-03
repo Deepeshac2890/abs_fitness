@@ -1,5 +1,5 @@
 import 'package:abs_fitness/Components/ReusablePaddingWidget.dart';
-import 'package:abs_fitness/Resources/planConstant.dart';
+import 'package:abs_fitness/Resources/StringConstants.dart';
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../Resources/Constants.dart';
+import '../Resources/W&FConstants.dart';
 import 'event.dart';
 import 'state.dart';
 
@@ -20,9 +20,6 @@ class DetailsPageBloc extends Bloc<DetailsPageEvent, DetailsPageState> {
   Stream<DetailsPageState> mapEventToState(DetailsPageEvent event) async* {
     if (event is InitEvent) {
       yield await init();
-    } else if (event is LogoutDetailsPageEvent) {
-      await logout(event.context);
-      yield LogoutDetailsPageState();
     } else if (event is LoadPageEvent) {
       yield LoadedPageState(loadDetails(event.planName, event.context));
     }
@@ -37,7 +34,7 @@ class DetailsPageBloc extends Bloc<DetailsPageEvent, DetailsPageState> {
     String imgName = "assets/default.png";
     // Default Phone Number
     String phoneNumber = "7887020286";
-    planContants.forEach(
+    planConstants.forEach(
       (element) {
         if (element["title"] == planName) {
           details = element["Details"];

@@ -18,10 +18,10 @@ import 'package:googleapis/calendar/v3.dart' as cal;
 import 'package:googleapis_auth/auth_io.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-//TODO: Deal with the app always asking meet permission from User
-// TODO: Close all the streams
+// TODO: Deal with the app always asking meet permission from User
 // TODO: See Local BLOC Implementation and note it in Notes
 // TODO: In notes update the placement of Expanded widgets where to be done
+// TODO: Phone Number and google sign-in has to be added
 
 Future<void> main() async {
   if (Platform.isAndroid) {

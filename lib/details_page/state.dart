@@ -15,5 +15,3 @@ class LoadedPageState extends DetailsPageState {
 
   LoadedPageState(this.detailsWidget);
 }
-
-class LogoutDetailsPageState extends DetailsPageState {}

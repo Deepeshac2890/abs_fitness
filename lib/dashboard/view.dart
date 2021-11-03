@@ -1,5 +1,5 @@
 import 'package:abs_fitness/Components/BottomBar.dart';
-import 'package:abs_fitness/Resources/planConstant.dart';
+import 'package:abs_fitness/Resources/StringConstants.dart';
 import 'package:abs_fitness/dashboard/bloc.dart';
 import 'package:abs_fitness/dashboard/event.dart';
 import 'package:abs_fitness/dashboard/state.dart';
@@ -7,7 +7,7 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../Resources/Constants.dart';
+import '../Resources/W&FConstants.dart';
 
 // TODO: Add the Bottom Bar in profile and Meetings Page.
 // TODO: Add Logout option in all the screens in AppBar
@@ -71,6 +71,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
     return Scaffold(
       bottomNavigationBar: BottomBar(),
+      appBar: appBarWithLogOut(context),
       body: SafeArea(
         child: Container(
           child: Column(

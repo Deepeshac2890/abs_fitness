@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-import '../Resources/Constants.dart';
+import '../Resources/W&FConstants.dart';
 import 'bloc.dart';
 import 'event.dart';
 
@@ -22,6 +22,12 @@ class _LoginPageState extends State<LoginPage> {
   String password;
   var forgotEmailController = TextEditingController();
   final LoginBloc loginBloc = LoginBloc();
+
+  @override
+  void dispose() {
+    loginBloc.close();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

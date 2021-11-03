@@ -1,8 +1,9 @@
+import 'package:abs_fitness/Resources/StringConstants.dart';
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../Resources/Constants.dart';
+import '../Resources/W&FConstants.dart';
 import 'event.dart';
 import 'state.dart';
 

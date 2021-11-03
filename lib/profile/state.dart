@@ -36,5 +36,3 @@ class UpdateImageState extends ProfileState {
 
   UpdateImageState(this.imgUpdate);
 }
-
-class LogoutState extends ProfileState {}

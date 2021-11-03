@@ -69,5 +69,3 @@ AppBar appBarWithLogOut(BuildContext context) {
     ],
   );
 }
-
-const String profileImageAsset = "assets/profile.png";

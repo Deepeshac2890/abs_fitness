@@ -1,4 +1,4 @@
-import 'package:abs_fitness/Resources/planConstant.dart';
+import 'package:abs_fitness/Resources/StringConstants.dart';
 import 'package:abs_fitness/meetingFramework/MeetingClassDashboardAdmin.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +26,7 @@ class MeetingDashboardAdminBloc
   }
 
   List<Widget> getData(BuildContext context) {
-    List<dynamic> responseList = planContants;
+    List<dynamic> responseList = planConstants;
     List<Widget> listItems = [];
     responseList.forEach(
       (post) {

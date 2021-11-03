@@ -1,4 +1,4 @@
-const planContants = [
+const planConstants = [
   {
     "title": "Weight Loss",
     "image": "wl.jpg",
@@ -59,3 +59,4 @@ const planContants = [
 
 const userDashboardMessage = "So What are you in mood for Today ?";
 const adminDashboardMessage = "Check the request received and enroll people";
+const String profileImageAsset = "assets/profile.png";

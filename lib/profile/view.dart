@@ -1,6 +1,6 @@
 import 'package:abs_fitness/Components/BottomBar.dart';
 import 'package:abs_fitness/Model/ProfileModel.dart';
-import 'package:abs_fitness/Resources/Constants.dart';
+import 'package:abs_fitness/Resources/W&FConstants.dart';
 import 'package:abs_fitness/profile/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,6 +17,12 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   ProfileModel editedPM;
   final ProfileBloc pb = ProfileBloc();
+
+  @override
+  void dispose() {
+    pb.close();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,18 +50,7 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget profileLoaded(BuildContext context, ProfileModel pm) {
     return Scaffold(
       bottomNavigationBar: BottomBar(),
-      appBar: AppBar(
-        leading: BackButton(),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        actions: [
-          LogoutButton(
-            onPressed: () {
-              pb.add(LogoutEvent(context));
-            },
-          ),
-        ],
-      ),
+      appBar: appBarWithLogOut(context),
       body: ListView(
         padding: EdgeInsets.all(10),
         physics: BouncingScrollPhysics(),
@@ -120,18 +115,7 @@ class _ProfilePageState extends State<ProfilePage> {
 
   Widget editProfile(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: BackButton(),
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        actions: [
-          LogoutButton(
-            onPressed: () {
-              pb.add(LogoutEvent(context));
-            },
-          ),
-        ],
-      ),
+      appBar: appBarWithLogOut(context),
       body: Container(
         padding: EdgeInsets.all(20),
         child: ListView(
@@ -195,22 +179,6 @@ class _ProfilePageState extends State<ProfilePage> {
         ),
       ),
     );
-  }
-}
-
-class LogoutButton extends StatelessWidget {
-  final Function onPressed;
-
-  LogoutButton({Key key, this.onPressed});
-
-  @override
-  Widget build(BuildContext context) {
-    return IconButton(
-        icon: Icon(
-          Icons.logout,
-          color: Colors.black,
-        ),
-        onPressed: onPressed);
   }
 }
 
