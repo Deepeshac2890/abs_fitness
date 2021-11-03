@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:abs_fitness/CalenderService/calender_client.dart';
+import 'package:abs_fitness/Resources/secrets.dart';
 import 'package:abs_fitness/Screens/WelcomeScreen.dart';
 import 'package:abs_fitness/admin_details_page/view.dart';
 import 'package:abs_fitness/dashboard/view.dart';
@@ -11,7 +12,6 @@ import 'package:abs_fitness/meetingFramework/MeetingClassDashboardUser.dart';
 import 'package:abs_fitness/meeting_dashboard_admin/view.dart';
 import 'package:abs_fitness/profile/view.dart';
 import 'package:abs_fitness/registration/view.dart';
-import 'package:abs_fitness/Resources/secrets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:googleapis/calendar/v3.dart' as cal;

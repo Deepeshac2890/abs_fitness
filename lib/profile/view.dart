@@ -1,6 +1,6 @@
 import 'package:abs_fitness/Components/BottomBar.dart';
-import 'package:abs_fitness/Resources/Constants.dart';
 import 'package:abs_fitness/Model/ProfileModel.dart';
+import 'package:abs_fitness/Resources/Constants.dart';
 import 'package:abs_fitness/profile/state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
