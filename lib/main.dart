@@ -11,7 +11,7 @@ import 'package:abs_fitness/meetingFramework/MeetingClassDashboardUser.dart';
 import 'package:abs_fitness/meeting_dashboard_admin/view.dart';
 import 'package:abs_fitness/profile/view.dart';
 import 'package:abs_fitness/registration/view.dart';
-import 'package:abs_fitness/secrets.dart';
+import 'package:abs_fitness/Resources/secrets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:googleapis/calendar/v3.dart' as cal;
@@ -22,7 +22,6 @@ import 'package:url_launcher/url_launcher.dart';
 // TODO: Close all the streams
 // TODO: See Local BLOC Implementation and note it in Notes
 // TODO: In notes update the placement of Expanded widgets where to be done
-// TODO: Refactor the contants
 
 Future<void> main() async {
   if (Platform.isAndroid) {

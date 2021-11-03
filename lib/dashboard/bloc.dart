@@ -1,4 +1,4 @@
-import 'package:abs_fitness/AdminUIDS.dart';
+import 'package:abs_fitness/Resources/AdminUIDS.dart';
 import 'package:abs_fitness/admin_details_page/view.dart';
 import 'package:abs_fitness/details_page/view.dart';
 import 'package:bloc/bloc.dart';
@@ -6,7 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../planConstant.dart';
+import '../Resources/planConstant.dart';
 import 'event.dart';
 import 'state.dart';
 

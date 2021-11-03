@@ -1,4 +1,5 @@
 import 'package:abs_fitness/CalenderService/storage.dart';
+import 'package:abs_fitness/Components/BottomBar.dart';
 import 'package:abs_fitness/Model/EventInfo.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -6,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../colors.dart';
+import '../Resources/colors.dart';
 
 class MeetingClassDashboardUser extends StatefulWidget {
   static String id = "MeetingDashboardUser";
@@ -166,6 +167,7 @@ class _MeetingClassDashboardUserState extends State<MeetingClassDashboardUser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: BottomBar(),
       backgroundColor: Colors.white,
       appBar: AppBar(
         elevation: 0,

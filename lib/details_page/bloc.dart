@@ -1,5 +1,5 @@
 import 'package:abs_fitness/Components/ReusablePaddingWidget.dart';
-import 'package:abs_fitness/planConstant.dart';
+import 'package:abs_fitness/Resources/planConstant.dart';
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../Constants.dart';
+import '../Resources/Constants.dart';
 import 'event.dart';
 import 'state.dart';
 

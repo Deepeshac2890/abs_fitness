@@ -1,4 +1,4 @@
-import 'package:abs_fitness/AdminUIDS.dart';
+import 'package:abs_fitness/Resources/AdminUIDS.dart';
 import 'package:abs_fitness/dashboard/view.dart';
 import 'package:abs_fitness/meetingFramework/MeetingClassDashboardUser.dart';
 import 'package:abs_fitness/meeting_dashboard_admin/view.dart';

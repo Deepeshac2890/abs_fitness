@@ -1,4 +1,4 @@
-import 'package:abs_fitness/Constants.dart';
+import 'package:abs_fitness/Resources/Constants.dart';
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flip_card/flip_card.dart';

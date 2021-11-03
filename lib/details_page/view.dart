@@ -3,7 +3,7 @@ import 'package:abs_fitness/details_page/event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../Constants.dart';
+import '../Resources/Constants.dart';
 import 'bloc.dart';
 import 'state.dart';
 

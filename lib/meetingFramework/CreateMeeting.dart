@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:googleapis/calendar/v3.dart' as calendar;
 import 'package:intl/intl.dart';
 
-import '../colors.dart';
+import '../Resources/colors.dart';
 
 class CreateMeeting extends StatefulWidget {
   @override

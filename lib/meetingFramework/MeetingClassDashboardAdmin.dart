@@ -6,7 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-import '../colors.dart';
+import '../Resources/colors.dart';
 
 class MeetingClassDashboardAdmin extends StatefulWidget {
   final String className;

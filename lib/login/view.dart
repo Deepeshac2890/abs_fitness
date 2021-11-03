@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
-import '../Constants.dart';
+import '../Resources/Constants.dart';
 import 'bloc.dart';
 import 'event.dart';
 

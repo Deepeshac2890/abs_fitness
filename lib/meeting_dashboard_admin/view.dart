@@ -1,8 +1,9 @@
+import 'package:abs_fitness/Components/BottomBar.dart';
 import 'package:abs_fitness/meeting_dashboard_admin/event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../Constants.dart';
+import '../Resources/Constants.dart';
 import 'bloc.dart';
 import 'state.dart';
 
@@ -43,6 +44,7 @@ class _MeetingDashboardAdminPageState extends State<MeetingDashboardAdminPage> {
 
   Widget initDashboard(BuildContext context, List<Widget> uiElements) {
     return Scaffold(
+      bottomNavigationBar: BottomBar(),
       appBar: appBarWithLogOut(context),
       body: Container(
         child: SafeArea(
