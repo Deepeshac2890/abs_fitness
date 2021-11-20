@@ -8,6 +8,8 @@ import 'package:intl/intl.dart';
 
 import '../Resources/colors.dart';
 
+// The tutorial for Google meet integration : https://blog.codemagic.io/google-meet-events-in-flutter/
+
 class CreateMeeting extends StatefulWidget {
   @override
   _CreateMeetingState createState() => _CreateMeetingState();
