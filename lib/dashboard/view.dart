@@ -4,6 +4,7 @@ import 'package:abs_fitness/dashboard/bloc.dart';
 import 'package:abs_fitness/dashboard/event.dart';
 import 'package:abs_fitness/dashboard/state.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -24,7 +25,7 @@ class _DashboardPageState extends State<DashboardPage> {
   ScrollController controller = ScrollController();
   bool closeTopContainer = false;
   double topContainer = 0;
-  final DashboardBloc db = DashboardBloc();
+  final DashboardBloc db = DashboardBloc(FirebaseAuth.instance);
 
   @override
   void initState() {

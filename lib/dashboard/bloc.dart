@@ -11,8 +11,10 @@ import 'event.dart';
 import 'state.dart';
 
 class DashboardBloc extends Bloc<DashboardEvent, DashboardState> {
-  DashboardBloc() : super(DashboardState().init());
-  FirebaseAuth fa = FirebaseAuth.instance;
+  // Dependencies
+  final FirebaseAuth fa;
+
+  DashboardBloc(this.fa) : super(DashboardState().init());
 
   @override
   Stream<DashboardState> mapEventToState(DashboardEvent event) async* {

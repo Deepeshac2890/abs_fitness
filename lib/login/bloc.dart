@@ -5,8 +5,9 @@ import 'event.dart';
 import 'state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
-  LoginBloc() : super(LoginState().init());
-  final FirebaseAuth fa = FirebaseAuth.instance;
+  final FirebaseAuth fa;
+
+  LoginBloc(this.fa) : super(LoginState().init());
 
   @override
   Stream<LoginState> mapEventToState(LoginEvent event) async* {
@@ -16,7 +17,6 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
       print("Login Event Initiated ${event.emailID} ${event.password}");
       yield LoadingState();
       bool success = await loginUsingEmail(event.emailID, event.password);
-      print(success);
       String error;
       if (success)
         error = null;

@@ -60,7 +60,7 @@ class ProfileBloc extends Bloc<ProfileEvent, ProfileState> {
         .get();
     String name = await data.data['Name'];
     String email = await data.data['Email'];
-    String imgUrl = await data.data['Profile Image'];
+      String imgUrl = await data.data['Profile Image'];
     String aboutMe = await data.data['About'];
     int activeClassesNumber = 0;
     int totalClassesNumber = 0;
